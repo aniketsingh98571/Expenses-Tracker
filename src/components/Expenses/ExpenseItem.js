@@ -2,6 +2,7 @@ import './ExpenseItem.css'
 import ExpenseDate from './ExpenseDate';
 import Card from '../UI/Card'
 import React, { useState } from 'react'
+
 const ExpenseItem = (props)=> {
     const [title,settitle]=useState("")
     const clickHandler=()=>{
@@ -9,6 +10,7 @@ const ExpenseItem = (props)=> {
     }
   return (
       <Card className="expense-item">
+          
           <ExpenseDate date={props.date} amount={props.amount} title={props.title}/>
   <div className="expense-item__description">
       <h2>{title}</h2>
