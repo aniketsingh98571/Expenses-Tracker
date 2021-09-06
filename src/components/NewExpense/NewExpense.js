@@ -4,11 +4,14 @@ import ExpenseForm from'./ExpenseForm'
 
 const NewExpense=(props)=>{
     const [isEditing,SetIsEditing]=useState(false)
+    //saveExpenseDataHandler is being called when the form is being submitted in ExpenseForm.js
     const saveExpenseDataHandler=(enteredExpenseData)=>{
+        console.log("In NewExpense printing enteredExpenseData",enteredExpenseData)
         const expenseData={
             ...enteredExpenseData,
             id:Math.random().toString()
         }
+        //from here we are calling addExpenseHandler function of App.js
         props.onAddExpense(expenseData)
         SetIsEditing(false)
     }

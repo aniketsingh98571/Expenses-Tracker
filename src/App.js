@@ -1,7 +1,6 @@
 
 import Expenses from './components/Expenses/Expenses'
 import React,{useState} from 'react'
-
 import NewExpense from './components/NewExpense/NewExpense';
 const Dummy_Expenses = [
   {
@@ -26,9 +25,15 @@ const Dummy_Expenses = [
 ]
 function App() {
   const [expenses,setExpense]=useState(Dummy_Expenses)
+  //addExpenseHandler function is being called from the NewExpense.js when the new data is being inserted.
   const addExpenseHandler=(expense)=>{
+    console.log("In App.js in App function event print",expense)
+  //when we want to update the state based on the previous state we pass a function to the state function which takes a parameter for previous
+  //state values and returns the current updated state and also previous state 
    setExpense(prevExpenses=>{
+    console.log("In App.js printing prevExpense",prevExpenses)
      return [expense,...prevExpenses]
+     
    })
   }
   return (

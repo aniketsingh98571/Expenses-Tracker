@@ -20,6 +20,8 @@ const ExpenseForm = (props) => {
       amount: +enteredAmount,
       date: new Date(enteredDate),
     };
+    //From here we are calling "saveExpensHandler" function of NewExpense.js
+
     props.onSaveExpenseData(expenseData);
     setEnteredTitle("");
     setEnteredAmount("");
